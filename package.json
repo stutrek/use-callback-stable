@@ -1,9 +1,11 @@
 {
     "name": "use-callback-stable",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A faster, friendlier, and safer useCallback",
     "main": "dist/index.js",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "repository": "github:stutrek/use-callback-stable",
     "scripts": {
         "build": "tsc",
@@ -14,7 +16,11 @@
         "test": "jest",
         "test:watch": "jest --watch"
     },
-    "keywords": ["hooks", "usecallback", "memory"],
+    "keywords": [
+        "hooks",
+        "usecallback",
+        "memory"
+    ],
     "author": "Stu Kabakoff",
     "license": "MIT",
     "devDependencies": {
