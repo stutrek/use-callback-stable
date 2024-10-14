@@ -11,7 +11,7 @@ import { useCallback, useRef } from 'react';
  *
  * @see {@link https://www.schiener.io/2024-03-03/react-closures}
  */
-export function useSafeCallback<T extends any[], U>(
+export function useCallbackStable<T extends any[], U>(
     callback: (...args: T) => U,
 ): (...args: T) => U {
     const callbackRef = useRef(callback);

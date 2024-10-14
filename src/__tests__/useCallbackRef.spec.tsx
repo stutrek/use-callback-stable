@@ -1,12 +1,12 @@
 import { renderHook, act } from '@testing-library/react';
-import { useSafeCallback } from '../index'; // Adjust the import path accordingly
+import { useCallbackStable } from '../index'; // Adjust the import path accordingly
 import { useState } from 'react';
 
-describe('useSafeCallback', () => {
+describe('useCallbackStable', () => {
     it('returns a stable function reference across renders', () => {
         const callback = jest.fn();
         const { result, rerender } = renderHook(() =>
-            useSafeCallback(callback),
+            useCallbackStable(callback),
         );
 
         const firstCallbackRef = result.current;
@@ -21,7 +21,7 @@ describe('useSafeCallback', () => {
         const updatedCallback = jest.fn();
 
         const { result, rerender } = renderHook(
-            ({ cb }) => useSafeCallback(cb),
+            ({ cb }) => useCallbackStable(cb),
             { initialProps: { cb: initialCallback } },
         );
 
@@ -43,7 +43,7 @@ describe('useSafeCallback', () => {
 
     it('correctly passes arguments and returns values', () => {
         const callback = jest.fn((a: number, b: number) => a + b);
-        const { result } = renderHook(() => useSafeCallback(callback));
+        const { result } = renderHook(() => useCallbackStable(callback));
 
         const returnValue = result.current(2, 3);
 
@@ -55,7 +55,7 @@ describe('useSafeCallback', () => {
         const { result, rerender } = renderHook(
             ({ value }) => {
                 const [state, setState] = useState(value);
-                const callback = useSafeCallback(() => state);
+                const callback = useCallbackStable(() => state);
                 return { callback, setState };
             },
             { initialProps: { value: 0 } },
