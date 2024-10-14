@@ -1,0 +1,12 @@
+{
+    "extends": "@tsconfig/recommended",
+    "include": ["src/**/*"],
+    "exclude": ["**/*.spec.ts", "**/*.spec.tsx"],
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "outDir": "./dist",
+        "lib": ["esnext", "dom"],
+        "declaration": true,
+        "declarationMap": true
+    }
+}

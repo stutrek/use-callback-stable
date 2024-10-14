@@ -1,0 +1,24 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+    "features": {},
+    "initializeCommand": "touch .devcontainer/.zsh_history",
+    "postCreateCommand": "npm install",
+    "postStartCommand": "chmod 666 /home/node/.zsh_history",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "biomejs.biome",
+                "Orta.vscode-jest",
+                "firsttris.vscode-jest-runner"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            }
+        }
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.devcontainer/.zsh_history,target=/home/node/.zsh_history,type=bind"
+    ],
+    "forwardPorts": [3000]
+}

@@ -1,0 +1,3 @@
+npm run format - - --staged --no-errors-on-unmatched
+npx biome check --staged --no-errors-on-unmatched
+tsc --noEmit
