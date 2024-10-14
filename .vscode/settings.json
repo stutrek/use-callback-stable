@@ -25,5 +25,8 @@
     },
     "files.associations": {
         "*.mdx": "markdown"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
