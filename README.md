@@ -42,7 +42,7 @@ In JavaScript, as long as a function is in memory, all the variables in its cont
 
 By using useCallbackStable, you avoid retaining old closures, as it always references the latest version of your callback function. This leads to improved memory usage and prevents potential memory leaks.
 
-For further details, see this article: [﻿React Closures and Memory Leaks](https://www.schiener.io/2024-03-03/react-closures).
+For further details, see this article: [React Closures and Memory Leaks](https://www.schiener.io/2024-03-03/react-closures).
 
 ## Stable References
 
